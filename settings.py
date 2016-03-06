@@ -50,26 +50,24 @@ XBRL_DICT_DIR = 'xbrl_dict'
 XBRL_DICT_FILENAME = 'xbrl_dict.p'
 
 #Path Names
-STOCK_EXCHANGE_LIST_PATH = "{0}/{1}".format(MAIN_SCRAPE_LIST_DIR,
-											STOCK_EXCHANGE_LIST_DIR)
+STOCK_EXCHANGE_LIST_PATH = "{0}/{1}".format(MAIN_SCRAPE_LIST_DIR, STOCK_EXCHANGE_LIST_DIR)
 											 
-XBRL_TAXONOMY_LIST_PATH = "{0}/{1}".format(MAIN_SCRAPE_LIST_DIR,
-										   XBRL_TAXONOMY_LIST_DIR)
+XBRL_TAXONOMY_LIST_PATH = "{0}/{1}".format(MAIN_SCRAPE_LIST_DIR, XBRL_TAXONOMY_LIST_DIR)
 											
 XBRL_ELEMENTS_PATH = "{0}/{1}/{2}".format(MAIN_SCRAPE_LIST_DIR,
-									      XBRL_TAXONOMY_LIST_DIR,
-									      XBRL_TAXONOMY_ELEMENTS_DIR)
+					  XBRL_TAXONOMY_LIST_DIR,
+					  XBRL_TAXONOMY_ELEMENTS_DIR)
 									  
 XBRL_CALCS_PATH = "{0}/{1}/{2}".format(MAIN_SCRAPE_LIST_DIR,
-									   XBRL_TAXONOMY_LIST_DIR,
-									   XBRL_TAXONOMY_CALCS_DIR)
+				       XBRL_TAXONOMY_LIST_DIR,
+				       XBRL_TAXONOMY_CALCS_DIR)
 											
 
 											
 XBRL_DICT_PATH = "{0}/{1}/{2}/{3}".format(MAIN_SCRAPE_LIST_DIR,
-										  XBRL_TAXONOMY_LIST_DIR,
-										  XBRL_DICT_DIR,
-										  XBRL_DICT_FILENAME)
+					  XBRL_TAXONOMY_LIST_DIR,
+					  XBRL_DICT_DIR,
+					  XBRL_DICT_FILENAME)
 
 #####################
 ## Scraper Options ##
