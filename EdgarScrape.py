@@ -11,30 +11,30 @@ class GetFilings:
 	def __init__(self, ticker_symbol):
 		self.ticker_symbol = ticker_symbol
 		self.filings = {'10q_list': [],
-						'10q_xl_list': [],
-						'10q_xml': [], 
-						'10q_html': [],
-						'10q_txt': [],
-						'10q_xl': [],
-						
-						'10k_list': [],
-						'10k_xl_list': [],
-						'10k_xml': [],
-						'10k_html': [],
-						'10k_txt': [],
-						'10k_xl': [],
-						
-						'success': {
-									'count': 0,
-									'10-Q': None,
-									'10-K': None
-								  },
-						'errors': {
-									'count': 0,
-									'10-Q': None,
-									'10-K': None
-								  }
-						}
+				'10q_xl_list': [],
+				'10q_xml': [], 
+				'10q_html': [],
+				'10q_txt': [],
+				'10q_xl': [],
+				
+				'10k_list': [],
+				'10k_xl_list': [],
+				'10k_xml': [],
+				'10k_html': [],
+				'10k_txt': [],
+				'10k_xl': [],
+				
+				'success': {
+						'count': 0,
+						'10-Q': None,
+						'10-K': None
+					   },
+				'errors': {
+						'count': 0,
+						'10-Q': None,
+						'10-K': None
+					  }
+				}
 		print('Scraping {0}'.format(self.ticker_symbol))
 		print('Getting 10-Q list...')
 		self.get_10q_list()
