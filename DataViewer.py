@@ -14,9 +14,9 @@ class DataView:
 	
 	def load_data(self):
 		fpath_no_p = "{0}/{1}/{2}/xml/{3}/".format(settings.EXTRACTED_DATA_PATH,
-												   self.symbol,
-												   self.ftype,
-												   self.date)
+							   self.symbol,
+							   self.ftype,
+							   self.date)
 		fpath_file = os.listdir(fpath_no_p)[0]
 		fpath = "{0}/{1}".format(fpath_no_p, fpath_file)
 		self.data = pickle.load(open(fpath, 'rb'))
