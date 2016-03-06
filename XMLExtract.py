@@ -30,12 +30,12 @@ class ExtractFilingData:
 		self.xbrl_year = None
 		
 		self.format_data = {
-							'quarter': None,
-							'year': None,
-							'date': None,
-							'symbol': None,
-							'ftype': None,
-							}
+					'quarter': None,
+					'year': None,
+					'date': None,
+					'symbol': None,
+					'ftype': None,
+				   }
 		
 		print("Extract contents from: {0}|{1}|{2}".format(self.ticker, self.date, self.ftype))
 		self.create_data_segments()
@@ -52,10 +52,10 @@ class ExtractFilingData:
 			del self.data['ins_t']
 			self.format_data['symbol'] = self.ticker
 			self.format_str = "{0}_{1}_{2}_{3}_{4}".format(self.format_data['symbol'],
-													   self.format_data['date'],
-													   self.format_data['year'],
-													   self.format_data['quarter'],
-													   self.format_data['ftype'])
+								       self.format_data['date'],
+								       self.format_data['year'],
+								       self.format_data['quarter'],
+								       self.format_data['ftype'])
 		elif self.data['error'] == True:
 			pass
 		
@@ -109,9 +109,9 @@ class ExtractFilingData:
 		"""Load all data files and store in variables."""
 		
 		fpath = '{0}/{1}/xml/{2}/{3}'.format(settings.RAW_DATA_PATH,
-										  self.ticker,
-										  self.ftype,
-										  self.date)
+						     self.ticker,
+						     self.ftype,
+						     self.date)
 
 		files = os.listdir(fpath)
 		sym_len = len(self.ticker) + 1
@@ -177,8 +177,8 @@ class ExtractFilingData:
 		try:
 			year = int(year)
 			sure_years = [2001, 2002, 2003, 2004, 2005, 
-						  2006, 2007, 2008, 2009, 2011,
-						  2012, 2013, 2014, 2016]
+				      2006, 2007, 2008, 2009, 2011,
+				      2012, 2013, 2014, 2016]
 			if year in sure_years:
 				self.xbrl_year = str(year)
 			if year == 2010:
