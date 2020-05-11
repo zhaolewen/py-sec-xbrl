@@ -21,7 +21,7 @@ Installation:
 2. see `test-parse.py`, modify the path to the XML file and it's really easy
 
 # Documentation
-More detailed documentation can be found here: [doc][/doc/README.MD]
+More detailed documentation can be found here: [doc](/doc/README.MD)
 
 # Development roadmap
 2 priorities for the moment:
