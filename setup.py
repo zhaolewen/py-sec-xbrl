@@ -6,7 +6,6 @@ with open("README.md", "r") as fh:
 setuptools.setup(
      name='py-sec-xbrl',
      version='0.1',
-     scripts=['py-sec-xbrl'] ,
      author="Lewen Zhao",
      author_email="zhaolewen@gmail.com",
      description="SEC Edgar Parser based on Python 3",

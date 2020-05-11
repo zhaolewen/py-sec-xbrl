@@ -10,7 +10,11 @@ The repository is originally forked from https://github.com/tooksoi/ScraXBRL, bu
 
 # How to install
 Current verion: `v0.1`
+
 Dependencies: in the `requirements.txt` file, currently only the `lxml` library
+
+Installation:
+`pip install py-sec-xbrl`
 
 # How to use
 1. get some XBRL XML files (see below if you don't have one yet)
