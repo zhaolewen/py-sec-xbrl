@@ -54,4 +54,4 @@ In the current version, 2 types of context are considered:
 5. This text file is in fact not the XBRL file, but we can get its folder path: https://www.sec.gov/Archives/edgar/data/1001115
 6. And in the inner folder, you can see the XBRL file which is `0001564590-20-023322-xbrl.zip`
 
-![SEC Company Folder](/pics/sec_folder.png)
+![SEC Company Folder](pics/sec_folder.png)
