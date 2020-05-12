@@ -8,6 +8,10 @@ In addition, it's not intended to be a tool to scrap SEC EDGAR as it varies a lo
 
 The repository is originally forked from https://github.com/tooksoi/ScraXBRL, but I soon find out that we have very different approaches and objectives, so soon afterwards the code in the 2 repositories are completely different and nothing is taken from ScraXBRL.
 
+# features
+- Parsing of the main XBRL XML file to extract data
+- Identify the main XBRL file within its XBRL package
+
 # How to install
 Current verion: `v0.1`
 
@@ -25,5 +29,5 @@ More detailed documentation can be found here: [doc](/doc/README.MD)
 
 # Development roadmap
 2 priorities for the moment:
-1. Basic SEC XBRL parsing capabilities
-2. Make the scripts ready as a library that can be installed
+1. Better formatting of extracted XBRL data
+2. More advanced extracting functionalities (notably on the segments & calculations)

@@ -1,10 +1,16 @@
 # Documentation
+## Table of Contents
+1. [Identifying file types](#identify_file_types)
+2. [Parsing Output data structure](#output_data_structure)
+3. [How to get data](#third-get_data) 
+
+## Identifying file types <a name="identify_file_types"></a>
 
 
-# Output data structure
+## Parsing Output data structure <a name="output_data_structure"></a>
 The current version will give you 2 dictionaries, one for the data and another for the context.
 
-## Data part:
+### Data part:
 ```python
 {"id":{ # the id of the data object
     "tag":"...", # name of the tag, e.g. Revenue, CostOfSales ...
@@ -16,12 +22,12 @@ The current version will give you 2 dictionaries, one for the data and another f
 }
 ```
 
-## Context part:
+### Context part:
 In the current version, 2 types of context are considered:
 1. unit of measure (USD, CAD, ...)
 2. context: time + segment (time instant/stard & end date, which part of the business or other stakeholders)
 
-#### unit
+##### unit
 ```python
 {"id":{ # the id of the context object
     "type":"unit", # the unit type
@@ -31,7 +37,7 @@ In the current version, 2 types of context are considered:
 }
 ```
 
-#### context
+##### context
 ```python
 {"id":{ # the id of the context object
     "type":"context", # the context type
@@ -46,7 +52,7 @@ In the current version, 2 types of context are considered:
 }
 ```
 
-# How to get data
+## How to get data <a name="get_data"></a>
 1. The entry point is here: https://www.sec.gov/edgar/searchedgar/accessing-edgar-data.htm
 2. As is mentioned on the page, you can get daily filing lists here: https://www.sec.gov/Archives/edgar/daily-index/
 3. Getting into the folders, you can see several types of index files, they are normally the same but organized in different ways, I personally prefer the "master" file
