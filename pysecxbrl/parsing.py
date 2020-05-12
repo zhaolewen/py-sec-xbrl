@@ -55,7 +55,7 @@ class SECParser:
 
         if elemType == "unit":
             divide = elem.find('.//{*}divide')
-            if not divide:
+            if divide is None:
                 res[elemType] = elem[0].text
             else:
                 res[elemType] = {}
@@ -65,12 +65,13 @@ class SECParser:
 
         if elemType == "context":
             entity = elem.find('.//{*}entity')
-            if entity:
+            if entity is not None:
                 identif = entity.find('.//{*}identifier')
                 res["scheme"] = identif.attrib["scheme"]
                 res["identifier"] = identif.text
+
                 seg = entity.find('.//{*}segment')
-                if seg:
+                if seg is not None:
                     res["segment"] = []
                     members = seg.findall('.//{*}explicitMember')
                     for member in members:
@@ -80,12 +81,13 @@ class SECParser:
                         })
 
             period = elem.find('.//{*}period')
-            if period:
+            if period is not None:
                 instant = period.find('.//{*}instant')
-                if instant:
+                if instant is not None:
                     res["instant"] = instant.text
+
                 start = period.find('.//{*}startDate')
-                if start:
+                if start is not None:
                     res["startDate"] = start.text
                     res["endDate"] = period.find('.//{*}endDate').text
 

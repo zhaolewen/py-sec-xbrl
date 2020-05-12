@@ -17,7 +17,7 @@ Installation:
 `pip install py-sec-xbrl`
 
 # How to start
-1. get some XBRL XML files (see below if you don't have one yet)
+1. get some XBRL XML files (see documentation if you don't have one yet)
 2. see `test-parse.py`, modify the path to the XML file and it's really easy
 
 # Documentation
