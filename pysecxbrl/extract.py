@@ -1,6 +1,10 @@
 import os
 
 class XBRLExtractor:
+    '''
+    The XBRLExtractor object is used for extracting different files from an existing XBRL package.
+    '''
+
     def __init__(self):
         pass
 

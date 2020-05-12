@@ -1,8 +1,14 @@
 # Documentation
 ## Table of Contents
+1. [List of classes & functions](#class_functions)
 1. [Identifying file types](#identify_file_types)
 2. [Parsing Output data structure](#output_data_structure)
-3. [How to get data](#third-get_data) 
+3. [How to get data](#get_data)
+
+## List of classes & functions <a name="class_functions"></a>
+
+### Package `pysecxbrl.extract`
+#### Class `pysecxbrl.extract.XBRLExtractor`
 
 ## Identifying file types <a name="identify_file_types"></a>
 
