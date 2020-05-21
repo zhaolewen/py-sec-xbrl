@@ -108,13 +108,18 @@ class SECParser:
         calc_links = tree.findall(".//{*}calculationLink")
 
         attrNs = tree.nsmap["xlink"]
-        print(attrNs)
+        attribHref = "{{{}}}href".format(attrNs)
+        attribLabel = "{{{}}}label".format(attrNs)
+        attribFrom = "{{{}}}from".format(attrNs)
+        attribTo = "{{{}}}to".format(attrNs)
+        attribArcrole = "{{{}}}arcrole".format(attrNs)
+        attribRole = "{{{}}}role".format(attrNs)
 
         res = {}
 
         for r in roles:
             id = r.attrib["roleURI"]
-            name = r.attrib["{{{}}}href".format(attrNs)]
+            name = r.attrib[attribHref]
             # doubling {{}} allows to escape the {} characters
             name = name.split("#")[1]
 
@@ -126,24 +131,24 @@ class SECParser:
             if len(link) == 0:
                 continue
 
-            linkRole = link.attrib["{{{}}}role".format(attrNs)]
+            linkRole = link.attrib[attribRole]
             locs = link.findall(".//{*}loc")
             arcs = link.findall(".//{*}calculationArc")
 
             tags = {}
             for loc in locs:
-                id = loc.attrib["{{{}}}label".format(attrNs)]
-                name = loc.attrib["{{{}}}href".format(attrNs)]
+                id = loc.attrib[attribLabel]
+                name = loc.attrib[attribHref]
                 name = name.split("#")[1]
                 tags[id] = {"tag":name}
 
             for arc in arcs:
-                t_from = arc.attrib["{{{}}}from".format(attrNs)]
-                t_to = arc.attrib["{{{}}}to".format(attrNs)]
+                t_from = arc.attrib[attribFrom]
+                t_to = arc.attrib[attribTo]
 
                 order = arc.attrib["order"]
                 weight = arc.attrib["weight"]
-                arcrole = arc.attrib["{{{}}}arcrole".format(attrNs)]
+                arcrole = arc.attrib[attribArcrole]
 
                 if "calc" not in tags[t_from]:
                     tags[t_from]["calc"] = []
