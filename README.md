@@ -13,7 +13,7 @@ The repository is originally forked from https://github.com/tooksoi/ScraXBRL, bu
 - Identify the main XBRL file within its XBRL package
 
 # How to install
-Current verion: `v0.1`
+Current verion: `v0.2`
 
 Dependencies: in the `requirements.txt` file, currently only the `lxml` library
 

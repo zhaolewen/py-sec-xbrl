@@ -19,6 +19,16 @@ class SECParser:
 
         return ctx_elems, data_elems
 
+    def parseCalculationXML(self,text):
+        utf8_parser = etree.XMLParser(encoding='utf-8')
+        s = text.encode('utf-8')
+        root = etree.fromstring(s, parser=utf8_parser)
+
+        tree = self.getCalculationTree(root)
+
+        return tree
+
+
     def getDataElementsAsDict(self, tree):
         data_elems = tree.findall(".//*[@contextRef]")
 
@@ -90,5 +100,56 @@ class SECParser:
                 if start is not None:
                     res["startDate"] = start.text
                     res["endDate"] = period.find('.//{*}endDate').text
+
+        return res
+
+    def getCalculationTree(self, tree):
+        roles = tree.findall(".//{*}roleRef")
+        calc_links = tree.findall(".//{*}calculationLink")
+
+        attrNs = tree.nsmap["xlink"]
+        print(attrNs)
+
+        res = {}
+
+        for r in roles:
+            id = r.attrib["roleURI"]
+            name = r.attrib["{{{}}}href".format(attrNs)]
+            # doubling {{}} allows to escape the {} characters
+            name = name.split("#")[1]
+
+            res[id] = {"role":name}
+            if self.copyIdInObj:
+                res[id]["id"] = id
+
+        for link in calc_links:
+            if len(link) == 0:
+                continue
+
+            linkRole = link.attrib["{{{}}}role".format(attrNs)]
+            locs = link.findall(".//{*}loc")
+            arcs = link.findall(".//{*}calculationArc")
+
+            tags = {}
+            for loc in locs:
+                id = loc.attrib["{{{}}}label".format(attrNs)]
+                name = loc.attrib["{{{}}}href".format(attrNs)]
+                name = name.split("#")[1]
+                tags[id] = {"tag":name}
+
+            for arc in arcs:
+                t_from = arc.attrib["{{{}}}from".format(attrNs)]
+                t_to = arc.attrib["{{{}}}to".format(attrNs)]
+
+                order = arc.attrib["order"]
+                weight = arc.attrib["weight"]
+                arcrole = arc.attrib["{{{}}}arcrole".format(attrNs)]
+
+                if "calc" not in tags[t_from]:
+                    tags[t_from]["calc"] = []
+                tags[t_from]["calc"].append({"loc":t_to, "order":order,
+                    "weight":weight,"arcrole":arcrole})
+
+            res[linkRole]["tags"] = tags
 
         return res
