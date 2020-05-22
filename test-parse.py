@@ -23,12 +23,12 @@ with open(os.path.join(folder, calc_f)) as f:
 
     print(calc_elems)
 
-# with open(os.path.join(folder, main_data_f)) as f:
-#     txt = f.read()
-#     ctx_elems, data_elems  = parser.parseMainXBRL(txt)
-#
-#     print("parsing result: ")
-#     #print(ctx_elems)
-#     #print(data_elems)
-#     print(len(ctx_elems))
-#     print(len(data_elems))
+with open(os.path.join(folder, main_data_f)) as f:
+    txt = f.read()
+    ctx_elems, data_elems  = parser.parseMainXBRL(txt)
+
+    print("parsing result: ")
+    print(ctx_elems)
+    print(data_elems)
+    print(len(ctx_elems))
+    print(len(data_elems))

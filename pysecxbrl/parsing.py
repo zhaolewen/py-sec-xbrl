@@ -139,7 +139,7 @@ class SECParser:
             for loc in locs:
                 id = loc.attrib[attribLabel]
                 name = loc.attrib[attribHref]
-                name = name.split("#")[1]
+                name = name.split("#")[1].replace("_",":")
                 tags[id] = {"tag":name}
 
             for arc in arcs:
